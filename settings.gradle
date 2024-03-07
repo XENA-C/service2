@@ -1,2 +1,4 @@
 rootProject.name = 'service2'
+include 'api'
+include 'db'
 
