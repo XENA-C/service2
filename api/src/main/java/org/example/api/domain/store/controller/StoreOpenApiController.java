@@ -16,12 +16,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/open-api/store")
 public class StoreOpenApiController {
+    //가맹점 등록: 로그인 사용자 아닌 가맹점 직원이 사용 -> 열린 api
 
     private final StoreBusiness storeBusiness;
 
     @PostMapping("/register")
     public Api<StoreResponse> register(
-        @Valid
+        @Valid //-> validation : @NotBlank @NotNull
         @RequestBody Api<StoreRegisterRequest> request
     ){
         var response = storeBusiness.register(request.getBody());

@@ -10,7 +10,7 @@ import org.example.db.store.StoreEntity;
 import java.util.Optional;
 
 @Converter
-public class StoreConverter {
+public class StoreConverter {   //request -> entity -> response
 
     public StoreEntity toEntity(
         StoreRegisterRequest request
@@ -18,14 +18,15 @@ public class StoreConverter {
         return Optional.ofNullable(request)
             .map(it ->{
                 return StoreEntity.builder()
-                    .name(request.getName())
-                    .address(request.getAddress())
-                    .category(request.getStoreCategory())
-                    .minimumAmount(request.getMinimumAmount())
-                    .minimumDeliveryAmount(request.getMinimumDeliveryAmount())
-                    .thumbnailUrl(request.getThumbnailUrl())
-                    .phoneNumber(request.getPhoneNumber())
-                    .build()
+                        .name(request.getName())
+                        .address(request.getAddress())
+                        .category(request.getStoreCategory())
+                        .minimumAmount(request.getMinimumAmount())
+                        .minimumDeliveryAmount(request.getMinimumDeliveryAmount())
+                        .thumbnailUrl(request.getThumbnailUrl())
+                        .phoneNumber(request.getPhoneNumber())
+                        .star(request.getStar())
+                        .build()
                     ;
             })
             .orElseThrow(() -> new ApiException(ErrorCode.NULL_POINT));

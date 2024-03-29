@@ -15,7 +15,8 @@ import java.time.LocalDateTime;
 @Table(name = "user") //클래스 명이 아닌 DB table 과 매치
 @Data
 @EqualsAndHashCode(callSuper = true)
-
+@NoArgsConstructor
+@AllArgsConstructor
 @SuperBuilder
 public class UserEntity extends BaseEntity {
 
