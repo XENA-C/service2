@@ -29,11 +29,11 @@ public class StoreEntity extends BaseEntity {
 
     @Column(length = 50, nullable = false)
     @Enumerated(EnumType.STRING)
-    private StoreStatus status;
+    private StoreStatus status;      // EnumType
 
     @Column(length = 50, nullable = false)
     @Enumerated(EnumType.STRING)
-    private StoreCategory category;
+    private StoreCategory category;   // EnumType
 
     private double star;
 

@@ -7,6 +7,7 @@ import org.example.api.common.exception.ApiException;
 import org.example.db.user.UserEntity;
 import org.example.db.user.UserRepository;
 import org.example.db.user.enums.UserStatus;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -20,7 +21,6 @@ import java.util.Optional;
 public class UserService {
 
     private final UserRepository userRepository;
-
 
     public UserEntity register(UserEntity userEntity){
         return Optional.ofNullable(userEntity)
